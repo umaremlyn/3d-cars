@@ -1,0 +1,144 @@
+#central-section {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	/* margin-top: 113px; */
+	height: clamp(200px, 70vh, 500px);
+}
+
+main {
+	height: 100vh;
+	width: 100%;
+	background-image: url(/images/mesh.webp);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: right top;
+	padding-top: 113px;
+}
+
+#text-and-buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 400px;
+	border-right: black 2px solid;
+}
+
+#text-and-buttons>h1 {
+	text-align: center;
+	color: white;
+	margin-bottom: 5%;
+	width: 350px;
+}
+
+.btn-primary {
+	background-color: #06720f !important;
+	border-color: #023d07 !important;
+	color: white !important;
+	width: 89% !important;
+	font-size: 17px !important;
+}
+
+.btn-group-vertical {
+	display: flex !important;
+	align-items: center !important;
+	width: 100% !important;
+}
+
+.btn-primary:hover {
+	background-color: #06530d !important;
+}
+
+.btn-primary:active,
+.btn-check:checked::before,
+.btn-primary:focus {
+	background-color: #023d07 !important;
+}
+
+.btn-primary:focus {
+	box-shadow: none !important;
+}
+
+#map-div {
+	width: 400px;
+	display: flex;
+	justify-content: center;
+}
+
+iframe {
+	width: 100%;
+	height: 100%;
+	margin-left: 6%;
+	margin-right: 6%;
+}
+
+/* ? screen becomes small */
+@media only screen and (max-width: 799px) {
+	#central-section {
+		align-content: center;
+		height: unset;
+	}
+	
+	main {
+		padding-top: 75px;
+	}
+
+	#text-and-buttons > h1 {
+		text-shadow: -3px 0px 8px rgb(0, 0, 0);
+	}
+
+	iframe {
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-top: 28px;
+		width: 90%;
+	}
+
+	#text-and-buttons {
+		border-right: none;
+		border-bottom: black 2px solid;
+		height: 210px;
+		justify-content: flex-end;
+		padding-bottom: 28px !important;
+	}
+
+	#text-and-buttons>h1 {
+		font-size: 20px;
+		width: unset;
+	}
+
+	@media only screen and (max-height: 460px) and (min-height: 399px) {
+		main {
+			padding-top: 35px;
+		}
+
+		#text-and-buttons {
+			padding-bottom: 13px !important;
+		}
+
+		iframe {
+			margin-top: 13px;
+		}
+	}
+
+	@media only screen and (max-height: 398px) {
+		#central-section {
+			flex-wrap: nowrap;
+		}
+
+		iframe {
+			margin-top: 0;
+		}
+
+		#text-and-buttons {
+			border-right: black 2px solid;
+			border-bottom: none;
+		}
+	}
+}
+
+@media only screen and (max-height: 320px) and (min-width: 800px) {
+	main {
+		padding-top: 80px;
+	}
+}
