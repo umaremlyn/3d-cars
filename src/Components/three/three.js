@@ -1,15 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 const MyComponent = () => {
+  const containerRef = useRef(null);
+
   useEffect(() => {
     // Set up the scene and renderer
     const scene = new THREE.Scene();
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
-    document.body.appendChild(renderer.domElement);
+    renderer.domElement.style.display = 'block';
 
     // Create the camera
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -21,10 +23,13 @@ const MyComponent = () => {
       scene.add(model);
     });
 
+    // Mount the renderer's DOM element to the container
+    containerRef.current.appendChild(renderer.domElement);
+
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
-      //Todo: Perform any necessary updates or transformations on the 3D model
+      // Perform any necessary updates or transformations on the 3D model
       renderer.render(scene, camera);
     };
 
@@ -32,11 +37,11 @@ const MyComponent = () => {
 
     // Clean up
     return () => {
-      //Todo: Dispose resources, remove event listeners, etc. if needed
+      // Dispose resources, remove event listeners, etc. if needed
     };
   }, []);
 
-  return <div id="canvas-container"></div>;
+  return <div ref={containerRef} style={{ width: '100%', height: '100vh' }}></div>;
 };
 
 export default MyComponent;
