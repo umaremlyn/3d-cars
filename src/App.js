@@ -3,11 +3,11 @@ import Navbar from "./Components/Navbar/navbar";
 import Header from "./Components/header/header";
 import Post from "./Components/post/post";
 import Custom from "./Components/custom/custom";
-import Second_header from "./Components/second_header/second";
+import SecondHeader from "./Components/second_header/second";
 import Popular from "./Components/popular/popular";
 import Footer from "./Components/footer/footer";
 
-import * as THREE from 'three';
+// import * as THREE from 'three';
 
 const App = () => {
   return (
@@ -16,10 +16,10 @@ const App = () => {
       <Header />
       <Post />
       <Custom />
-      <Second_header />
+      <SecondHeader />
       <Popular />
       <Footer />
-      <THREE />
+      {/* <THREE /> */}
     </>
   );
 };

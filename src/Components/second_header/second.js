@@ -1,7 +1,7 @@
 import SecondImg from "../../images/second_header.jpg";
 import "./second.css";
 
-const Second_header = () => {
+const SecondHeader = () => {
   return (
     <>
       <div className="second_header">
@@ -21,4 +21,4 @@ const Second_header = () => {
     </>
   );
 };
-export default Second_header;
+export default SecondHeader;
